@@ -1,7 +1,16 @@
-@(message: String)
+@(list: List[(String, Seq[String])])
 
 @main("Welcome to Play 2.0") {
     
-    @play20.welcome(message)
+    <section>
+    <dl>
+    @for(t <- list) {
+        <dt>@t._1</dt>
+        @for(v <- t._2) {
+        <dd>@v</dd>
+        }
+    }
+    </dl>
+    </section>
     
 }
